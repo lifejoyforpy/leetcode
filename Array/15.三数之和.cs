@@ -29,6 +29,10 @@
 using System;
 using System.Collections;
 using System.linq;
+/// <summary>
+/// 解决思路，先排序；然后第一个数去小于0；后续第二第三个遇到连续重复的跳过，防止重复。比如第三个数 连续为3，则第二个3跳过继续k--；
+/// j< k ;k>=0;
+/// </summary>
 public class Solution {
     public IList<IList<int>> ThreeSum (int[] nums) {
 
