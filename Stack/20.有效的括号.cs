@@ -58,7 +58,6 @@ using system;
 public class Solution {
     public bool IsValid (string s) {
         Stack<char> _stack = new Stack<char> ();
-
         foreach (var c in s) {
             if (c == '(' || c == '{' || c == '[') {
                 _stack.Push (c);
