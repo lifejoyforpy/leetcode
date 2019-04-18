@@ -21,8 +21,38 @@
  * 
  */
 public class Solution {
-    public int ThreeSumClosest(int[] nums, int target) {
-        
-    }
-}
+    public int ThreeSumClosest (int[] nums, int target) {
+        Array.Sort (nums);
+        int len = nums.Length;
+        if (len <= 2) {
+            return 0;
+        }
+        int result = int.MaxValue;
+        int value = 0;
+        int divd_value = 0;
+        int min_divdvalue = int.MaxValue;
+        for (int i = 0; i < len; i++) {
+            int j = i + 1;
+            int k = len - 1;
+            while (j < k) {
+                value = nums[i] + nums[j] + nums[k];
+                divd_value = (value - target) < 0 ? (value - target) * -1 : (value - target);
+                if (divd_value == 0)
+                    return value;
+                if (divd_value < min_divdvalue) {
+                    min_divdvalue = divd_value;
+                    result = value;
+                }
+                if (value < target) {
+                    j++;
+                } else {
+                    k--;
+                }
 
+            }
+
+        }
+        return result;
+    }
+   
+}
